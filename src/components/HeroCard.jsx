@@ -10,12 +10,12 @@ const CardContainer = styled.article`
   border-radius: 5px;
   scroll-snap-align: start;
   box-shadow: 0 2px 4px rgb(0 0 0 / 7%), 0 0 0 1px rgb(0 0 0 / 10%);
-
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-1);
   & > * {
     flex-grow: 1;
+    /* wraps the two elements when the container is <349px wide */
     flex-basis: calc((349px - 100%) * 999);
   }
   & > :nth-last-child(n + 3),
@@ -108,16 +108,17 @@ const HeroCard = (
 ) => {
   return (
     <CardContainer>
+      {/* power stats and image */}
       <Sidebar>
         <HeroStats />
         <HeroImage pic={props.picture} />
       </Sidebar>
+
+      {/* text content */}
       <InfoBox>
         <InfoSection>
           <SectionHeader>Name:</SectionHeader>
-         {props.name}{' '}
-          Full Name: {props.fullname}{' '}
-          Alter Ego: {props.alterego}{' '}
+          {props.name} Full Name: {props.fullname} Alter Ego: {props.alterego}{' '}
           Aliases: {props.alias}{' '}
         </InfoSection>
         <InfoSection>
@@ -130,27 +131,6 @@ const HeroCard = (
           <SectionHeader>History:</SectionHeader>
         </InfoSection>
       </InfoBox>
-      {/*
-    stack
-      names
-        name
-        fullname
-        alias
-      appearance
-        gender
-        race
-        height
-        weight
-        eye hair
-      bio
-        birth
-        group
-        relatives
-        work
-      history
-        first appearance
-        publisher
-    /stack */}
     </CardContainer>
   );
 };

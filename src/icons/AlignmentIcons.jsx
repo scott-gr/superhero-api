@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import styled from '@emotion/styled';
 
+// Alignment Icons, Thumbs up/down, angel/devil. Should be clear
 const AlignmentIcon = styled.svg`
   width: var(--s-1);
   height: var(--s-1);
