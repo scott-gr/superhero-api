@@ -1,15 +1,17 @@
 import React, { memo } from 'react';
 import styled from '@emotion/styled';
 
+// Add SVG icons for each stat
 const StatIcon = styled.svg`
   width: var(--s-1);
   height: var(--s-1);
 `;
 
+// number or 'level' of each stat
 const StatCaption = styled.span`
   display: inline-flex;
   align-items: baseline;
-  color: var(--appred)
+  color: var(--appred);
 `;
 
 export const StrIcon = (props) => {

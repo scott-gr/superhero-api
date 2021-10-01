@@ -3,7 +3,6 @@ import Main from './views/Main';
 import styled from '@emotion/styled';
 
 
-
 const Grid = styled.main`
   display: grid;
   grid-gap: 1rem;

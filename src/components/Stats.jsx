@@ -12,7 +12,6 @@ import {
 const StatSet = styled.div`
   display: flex;
   flex-direction: column;
-  /* justify-content: */
   padding: 0;
   & > * {
     margin-top: 0;

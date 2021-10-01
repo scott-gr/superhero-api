@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import styled from '@emotion/styled';
 
 const Frame = styled.picture`
+/* aspect ratio */
   --n: 1;
   --d: 1;
   padding-bottom: calc(var(--n) / var(--d) * 90%);
