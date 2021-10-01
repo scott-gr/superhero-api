@@ -2,9 +2,9 @@ import React, { memo } from 'react';
 import styled from '@emotion/styled';
 
 const Frame = styled.picture`
-  --n: 3;
-  --d: 4;
-  padding-bottom: calc(var(--n) / var(--d) * 100%);
+  --n: 1;
+  --d: 1;
+  padding-bottom: calc(var(--n) / var(--d) * 90%);
   position: relative;
   & > * {
     overflow: hidden;
@@ -18,9 +18,10 @@ const Frame = styled.picture`
     align-items: center;
   }
   & > img {
-    width: 100%;
     height: 100%;
+    width: auto;
     object-fit: cover;
+    border-radius: 5px;
   }
 `;
 

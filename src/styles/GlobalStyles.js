@@ -4,6 +4,12 @@ export const GlobalStyles = () => (
   <Global
     styles={css`
       :root {
+        /* colors */
+        --appred: #e63946;
+        --appwhite: #f1faee;
+        --applightblue: #a8dadc;
+        --appmedblue: #457b9d;
+        --appdarkblue: #1d3557;
         /* scale of sizes  */
         --ratio: 1.5;
         --s-5: calc(var(--s-4) / var(--ratio));
@@ -31,17 +37,26 @@ export const GlobalStyles = () => (
 
       html {
         font-size: 1em;
+        font-family: Arial, Helvetica, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
       button {
         cursor: pointer;
       }
+      body {
+        background-color: var(--appdarkblue);
+      }
       img {
         width: 100%;
       }
+      header {
+        text-align: center;
+        color: var(--applightblue);
+      }
       * {
         box-sizing: border-box;
+        scroll-behavior: smooth;
       }
     `}
   />

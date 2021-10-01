@@ -12,13 +12,15 @@ import {
 const StatSet = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  /* justify-content: */
+  padding: 0;
   & > * {
     margin-top: 0;
     margin-bottom: 0;
+    padding:0;
   }
   & > * + * {
-    margin-top: var(--s1);
+    margin-top: var(--s-2);
   }
 `;
 

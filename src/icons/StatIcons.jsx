@@ -9,56 +9,54 @@ const StatIcon = styled.svg`
 const StatCaption = styled.span`
   display: inline-flex;
   align-items: baseline;
-  & > svg {
-    margin-inline-end: var(--s0);
-  }
+  color: var(--appred)
 `;
 
-export const StrIcon = (level) => {
+export const StrIcon = (props) => {
   return (
     <StatCaption>
       <StatIcon></StatIcon>
-      {level}
+      {props.level}str
     </StatCaption>
   );
 };
-export const IntIcon = (level) => {
+export const IntIcon = (props) => {
   return (
     <StatCaption>
       <StatIcon></StatIcon>
-      {level}
+      {props.level}int
     </StatCaption>
   );
 };
-export const SpdIcon = (level) => {
+export const SpdIcon = (props) => {
   return (
     <StatCaption>
       <StatIcon></StatIcon>
-      {level}
+      {props.level}spd
     </StatCaption>
   );
 };
-export const DurIcon = (level) => {
+export const DurIcon = (props) => {
   return (
     <StatCaption>
       <StatIcon></StatIcon>
-      {level}
+      {props.level}dur
     </StatCaption>
   );
 };
-export const PwrIcon = (level) => {
+export const PwrIcon = (props) => {
   return (
     <StatCaption>
       <StatIcon></StatIcon>
-      {level}
+      {props.level}pwr
     </StatCaption>
   );
 };
-export const ComIcon = (level) => {
+export const ComIcon = (props) => {
   return (
     <StatCaption>
       <StatIcon></StatIcon>
-      {level}
+      {props.level}com
     </StatCaption>
   );
 };

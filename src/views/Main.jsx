@@ -1,9 +1,7 @@
 import React, { memo, useState, useEffect } from 'react';
 import styled from '@emotion/styled/macro';
 import axios from 'axios';
-import { render } from '@testing-library/react';
 import HeroCard from '../components/HeroCard';
-
 //
 // ─── SUPERHERO API https://akabab.github.io/superhero-api/api/
 //
@@ -14,11 +12,7 @@ const client = axios.create({
 const all_endpoint = 'all.json';
 const id_endpoint = 'id/3.json';
 
-const Listitem = (props) => {
-  return <li>{props.value}</li>;
-};
-
-const Main = memo(()  => {
+const Main = memo(() => {
   //
   // ─── STATE HOOKS ────────────────────────────────────────────────────────────────
   //
@@ -30,23 +24,16 @@ const Main = memo(()  => {
     async function getHeroes() {
       const response = await client.get(all_endpoint);
       const heroData = Object.values(response.data);
-      const length = heroData.length
-      setHeroes(heroData);
+      setHeroes(response.data);
     }
     getHeroes();
   }, []);
 
   const List = heroes.map((hero) => (
-// if (hero.name === "A-Bomb"){
-
-// }
-
-<HeroCard key={hero.id} name={hero.name} />
-
-
+    <HeroCard key={hero.id} name={hero.name} fullname={hero.fullName} altergo={hero.alterEgos}  picture={hero.images.lg} />
   ));
-
-  return <ul>{List[0]}</ul>;
+  return <>{List}</>;
+  // return <HeroCard name={heroes.name}/>;
 });
 
 export default Main;

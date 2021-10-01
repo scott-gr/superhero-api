@@ -4,10 +4,43 @@ import HeroImage from './Image';
 import HeroStats from './Stats';
 
 const CardContainer = styled.article`
-  padding: var(--s1);
-  border: 2px solid black;
+  padding: var(--s-1);
+  /* border: 2px solid black; */
+  background-color: var(--appwhite);
+  border-radius: 5px;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 7%), 0 0 0 1px rgb(0 0 0 / 10%);
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-1);
+  & > * {
+    flex-grow: 1;
+    flex-basis: calc((349px - 100%) * 999);
+  }
+  & > :nth-last-child(n + 3),
+  & > :nth-last-child(n + 3) ~ * {
+    flex-basis: 100%;
+  }
   & > * {
     color: inherit;
+  }
+`;
+
+const InfoBox = styled.section`
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: left;
+  & > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  & > * + * {
+    margin-top: var(--s-1);
   }
 `;
 
@@ -22,23 +55,6 @@ const Sidebar = styled.section`
   & > :last-child {
     flex-basis: 0;
     flex-grow: 999;
-    min-width: 55%;
-  }
-`;
-
-const InfoBox = styled.section`
-  box-sizing: content-box;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  & > * {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  & > * + * {
-    margin-top: var(--s0);
   }
 `;
 
@@ -48,7 +64,8 @@ const InfoSection = styled.div`
   margin-right: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  text-align: left;
+  justify-content: left;
   & > * {
     margin-top: 0;
     margin-bottom: 0;
@@ -59,46 +76,49 @@ const InfoSection = styled.div`
 `;
 
 const SectionHeader = styled.h5`
-  color: blue;
+  color: var(--appdarkblue);
 `;
 
 const HeroCard = (
-  picture,
-  name,
-  int,
-  str,
-  spd,
-  dur,
-  pwr,
-  com,
-  gender,
-  race,
-  height,
-  weight,
-  eyes,
-  hair,
-  fullname,
-  alteregos,
-  alias,
-  birthplace,
-  firstappeared,
-  publisher,
-  alignment,
-  occupation,
-  base,
-  groups,
-  family
+  props
+  // name,
+  // int,
+  // str,
+  // spd,
+  // dur,
+  // pwr,
+  // com,
+  // gender,
+  // race,
+  // height,
+  // weight,
+  // eyes,
+  // hair,
+  // fullname,
+  // alteregos,
+  // alias,
+  // birthplace,
+  // firstappeared,
+  // publisher,
+  // alignment,
+  // occupation,
+  // base,
+  // groups,
+  // family
 ) => {
   return (
     <CardContainer>
       <Sidebar>
         <HeroStats />
-        <HeroImage pic={picture} />
+        <HeroImage pic={props.picture} />
       </Sidebar>
       <InfoBox>
         <InfoSection>
           <SectionHeader>Name:</SectionHeader>
-          <p>{name}</p>
+         {props.name}{' '}
+          Full Name: {props.fullname}{' '}
+          Alter Ego: {props.alterego}{' '}
+          Aliases: {props.alias}{' '}
         </InfoSection>
         <InfoSection>
           <SectionHeader>Appearance:</SectionHeader>
